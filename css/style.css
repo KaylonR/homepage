@@ -1,0 +1,271 @@
+/* Basic reset for consistent styling across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: none;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    background: #282828;
+    /* Light gray background */
+    background: url("../images/AW139_v2.png") no-repeat center center fixed;
+    /* Background image */
+    background-size: cover;
+    /* Ensure the image covers the entire background */
+    position: relative;
+    margin: 0;
+}
+
+
+.homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.company-name {
+    height: auto;
+    margin: 35px;
+}
+
+.company-name h1 a {
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Horizontal offset, vertical offset, blur radius, shadow color */
+    color: red;
+    -webkit-text-stroke: white 0.5px;
+    pad: 10px;
+    /* Space below the company name */
+    text-decoration: none;
+}
+
+.bold-text {
+    color: red;
+    font-weight: 100;
+    font-size: 1.2em;
+
+}
+
+.grid-container {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 80%;
+    width: 100%;
+    max-height: 90%;
+    height: 90%;
+}
+
+.grid-item {
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.5)); /* Vertical gradient of opacity */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    gap: 0px;
+}
+
+
+.homepage-header {
+    grid-column: span 2;
+    /* Make this item span two columns */
+    background: rgba(0, 30, 70, 0.8);
+    /* Different background for the header */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 10px;
+    /* Add larger gap below the header */
+    max-width: 80%;
+    width: 100%;
+    max-height: 90%;
+    height: auto;
+}
+
+.homepage-header h1 {
+    font-size: 1.8em;
+    color: #efefef;
+}
+
+.homepage-header p {
+    font-size: 1.0em;
+    color: #cfcfcf;
+    margin: 10px 0;
+}
+
+/* Corner Images */
+
+/* Positioning corner images */
+.top-left,
+.bottom-right {
+    position: absolute;
+}
+
+.top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    /* Adjust as necessary */
+    z-index: -1;
+    /* Ensures it stays above other content */
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10vw;
+    /* Adjust as necessary */
+    z-index: 1000;
+    /* Ensures it stays above other content */
+}
+
+.corner-image-top {
+    width: 20vw;
+    /* Width relative to viewport width for top left image */
+    height: auto;
+    /* Maintain aspect ratio */
+    opacity: 0.7;
+    /* Make the image semi-transparent */
+}
+
+.corner-image-bottom {
+    width: 10vw;
+    /* Width relative to viewport width for bottom right image */
+    height: auto;
+    /* Maintain aspect ratio */
+    opacity: 0.7;
+    /* Make the image semi-transparent */
+}
+
+
+
+.link-header {
+    display: inline-block;
+    padding: 1px 5px;
+    color: rgb(230, 230, 230);
+    background-color: rgb(150, 0, 0);
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.link-main {
+    display: inline-block;
+    padding: 1px 5px;
+    color: rgb(230, 230, 230);
+    background-color: #22529f;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cookie Popup */
+.cookie-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(220, 220, 220, 0.7);
+    /* Matching the site's header background */
+    color: #22529f;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.8em;
+    z-index: 1000;
+}
+
+.cookie-popup button {
+    background: #22529f;
+    /* Matching the site's link background color */
+    color: #cfcfcf;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-popup button:hover {
+    background: #0056b3;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .grid-item h1 {
+        font-size: 1.5em;
+    }
+
+    .grid-item p {
+        font-size: 1em;
+    }
+
+    .contact-link {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .corner-image-top {
+        width: 25vw;
+        /* Adjust size for smaller screens */
+    }
+
+    .corner-image-bottom {
+        width: 15vw;
+        /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-item h1 {
+        font-size: 1.2em;
+    }
+
+    .grid-item p {
+        font-size: 0.9em;
+    }
+
+    .contact-link {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    .corner-image-top {
+        width: 30vw;
+        /* Adjust size for very small screens */
+    }
+
+    .corner-image-bottom {
+        width: 20vw;
+        /* Adjust size for very small screens */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        background-color: #282828;
+        /* Set background color */
+    }
+}

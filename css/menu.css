@@ -1,0 +1,80 @@
+/* Menu */
+
+/* Styles for the menu container */
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.menu-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    /* Ensure it is above other content */
+}
+
+/* Styles for the menu icon (hamburger icon) */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #cfcfcf;
+    /* Adjust color as needed */
+}
+
+/* Styles for the dropdown menu */
+.dropdown-menu {
+    display: block;
+    /* Ensure it takes space in the DOM */
+    position: absolute;
+    top: 40px;
+    /* Adjust positioning as needed */
+    right: 0;
+    background-color: rgba(220, 220, 220, 1);
+    /* Background color */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    border-radius: 5px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    /* Smooth dropdown effect */
+    max-height: 0;
+    /* Hidden by default */
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Styles for the dropdown menu links */
+.dropdown-menu a {
+    color: #333;
+    /* Link color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change link color on hover */
+.dropdown-menu a:hover {
+    background-color: #22529f;
+    color: #cfcfcf;
+}
+
+/* Active class to show the dropdown menu */
+.dropdown-menu.show {
+    max-height: 500px;
+    /* Adjust height as needed */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animation for closing the dropdown menu */
+.dropdown-menu.animate-close {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+}

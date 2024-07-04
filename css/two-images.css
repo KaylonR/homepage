@@ -1,0 +1,76 @@
+.homepage-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    /* Limiting the maximum width of the container */
+    /* Center the container on the page */
+    overflow: hidden;
+    /* Adds space around the content */
+    height: 60vh;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.left,
+.right {
+    flex: 1 1 50%;
+    /* Assigns equal space to both divs */
+    overflow: hidden;
+    /* Keeps content contained */
+    padding: 10px;
+    /* Adds internal spacing for breathing room */
+    display: flex;
+    /* Ensures children are flexed too */
+    align-items: stretch;
+    /* Stretches children to fill the container */
+    margin-bottom: 5px;
+}
+
+.right iframe {
+    width: 100%;
+    /* Full width of the container */
+    height: 100%;
+    /* Stretches to fill the height of its parent */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+    /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+    border: 1px solid #f0f0f0;
+}
+
+.left img {
+    width: 100%;
+    /* Full width of the container */
+    height: auto;
+    /* Stretches to fill the height of its parent */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+    /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+    border: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+
+    /* Make the two divs stack */
+    .left,
+    .right {
+        flex: 1 1 100%;
+        /* Assigns full width to both divs */
+    }
+
+    .homepage-images-container {
+        height: 100vh;
+        padding: 10px;
+    }
+
+    .right {
+        order: -1;
+        /* Move the right div to the top */
+    }
+
+}
